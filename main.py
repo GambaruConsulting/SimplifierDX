@@ -4,7 +4,7 @@ import re
 import json
 device = 'cpu'
 import os
-from transformers import T5TokenizerFast
+from transformers import T5TokenizerFast, pipeline
 
 #region Load Model and Tokenizer
 from fastT5 import (OnnxT5, get_onnx_runtime_sessions)
@@ -107,7 +107,7 @@ def SimplifyGate(input_string):
     return result
 
 
-def simplify(input_string, **generator_args):
+"""def simplify(input_string, **generator_args):
     generator_args = {
         "num_beams": 5,
         "length_penalty": 1,
@@ -121,7 +121,17 @@ def simplify(input_string, **generator_args):
     output = tokenizer.batch_decode(res, skip_special_tokens=True)
     output = [item.split("<sep>") for item in output][0][0]
     output = output[:1].upper() + output[1:]
-    return output
+    return output"""
+
+generator_args = {
+    "num_beams": 4,
+    "length_penalty": 1,
+    "no_repeat_ngram_size": 5,
+    "early_stopping": True,
+    "min_length": 1,
+    "max_length": 500
+}
+simplify = pipeline(model=model, tokenizer=tokenizer, task="text2text-generation", **generator_args)
 
 
 pests = ["\nadvertisement"]
