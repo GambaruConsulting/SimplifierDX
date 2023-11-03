@@ -17,6 +17,7 @@ options = onnxruntime.SessionOptions()
 options.enable_cpu_mem_arena = False
 options.enable_mem_pattern = False
 options.enable_mem_reuse = False
+options.intra_op_num_threads = 1
 #options.graph_optimization_level = onnxruntime.GraphOptimizationLevel.ORT_ENABLE_ALL
 
 
@@ -86,7 +87,7 @@ def SimplifyGate(input_string):
     return result
 
 
-"""def simplify(input_string, **generator_args):
+def simplify(input_string, **generator_args):
     generator_args = {
         "num_beams": 5,
         "length_penalty": 1,
@@ -100,9 +101,9 @@ def SimplifyGate(input_string):
     output = tokenizer.batch_decode(res, skip_special_tokens=True)
     output = [item.split("<sep>") for item in output][0][0]
     output = output[:1].upper() + output[1:]
-    return output"""
+    return output
 
-generator_args = {
+"""generator_args = {
     "num_beams": 4,
     "length_penalty": 1,
     "no_repeat_ngram_size": 5,
@@ -110,7 +111,7 @@ generator_args = {
     "min_length": 1,
     "max_length": 500
 }
-simplify = pipeline(model=model, tokenizer=tokenizer, task="text2text-generation", **generator_args)[0]
+simplify = pipeline(model=model, tokenizer=tokenizer, task="text2text-generation", **generator_args)[0]"""
 
 
 pests = ["\nadvertisement"]
