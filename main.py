@@ -110,7 +110,7 @@ generator_args = {
     "min_length": 1,
     "max_length": 500
 }
-simplify = pipeline(model=model, tokenizer=tokenizer, task="text2text-generation", **generator_args)
+simplify = pipeline(model=model, tokenizer=tokenizer, task="text2text-generation", **generator_args)[0]
 
 
 pests = ["\nadvertisement"]
