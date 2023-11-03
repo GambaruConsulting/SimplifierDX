@@ -68,7 +68,7 @@ decoder_sess_init = onnxruntime.InferenceSession(str(init_decoder_path), sess_op
 
 model_sessions = encoder_sess, decoder_sess, decoder_sess_init
 
-model = OnnxT5(trained_model_path, model_sessions)
+#model = OnnxT5(trained_model_path, model_sessions)
 tokenizer = T5TokenizerFast.from_pretrained(trained_model_path)
 #endregion
 
@@ -88,6 +88,7 @@ def SimplifyGate(input_string):
 
 
 def simplify(input_string, **generator_args):
+    model = OnnxT5(trained_model_path, model_sessions)
     generator_args = {
         "num_beams": 5,
         "length_penalty": 1,
@@ -101,6 +102,7 @@ def simplify(input_string, **generator_args):
     output = tokenizer.batch_decode(res, skip_special_tokens=True)
     output = [item.split("<sep>") for item in output][0][0]
     output = output[:1].upper() + output[1:]
+    del model
     return output
 
 """generator_args = {
