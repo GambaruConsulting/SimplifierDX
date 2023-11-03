@@ -14,9 +14,9 @@ model_name = "model_files"
 
 
 options = onnxruntime.SessionOptions()
-options.enable_cpu_mem_arena = True
-options.enable_mem_pattern = True
-options.enable_mem_reuse = True
+options.enable_cpu_mem_arena = False
+options.enable_mem_pattern = False
+options.enable_mem_reuse = False
 #options.graph_optimization_level = onnxruntime.GraphOptimizationLevel.ORT_ENABLE_ALL
 
 
@@ -34,12 +34,6 @@ with open(os.path.join(trained_model_path, f"encoder_0.onnx"), "rb") as file_0, 
         open(os.path.join(trained_model_path, f"encoder_4.onnx"), "rb") as file_4:
     with open(encoder_path, "wb") as write_file:
         write_file.write(file_0.read() + file_1.read() + file_2.read() + file_3.read() + file_4.read())
-file_0.close()
-file_1.close()
-file_2.close()
-file_3.close()
-file_4.close()
-write_file.close()
 
 
 with open(os.path.join(trained_model_path, f"decoder_0.onnx"), "rb") as file_0, \
@@ -50,13 +44,6 @@ with open(os.path.join(trained_model_path, f"decoder_0.onnx"), "rb") as file_0, 
         open(os.path.join(trained_model_path, f"decoder_5.onnx"), "rb") as file_5:
     with open(decoder_path, "wb") as write_file:
         write_file.write(file_0.read() + file_1.read() + file_2.read() + file_3.read() + file_4.read() + file_5.read())
-file_0.close()
-file_1.close()
-file_2.close()
-file_3.close()
-file_4.close()
-file_5.close()
-write_file.close()
 
 
 with open(os.path.join(trained_model_path, f"init_decoder_0.onnx"), "rb") as file_0, \
@@ -68,14 +55,6 @@ with open(os.path.join(trained_model_path, f"init_decoder_0.onnx"), "rb") as fil
         open(os.path.join(trained_model_path, f"init_decoder_6.onnx"), "rb") as file_6:
     with open(init_decoder_path, "wb") as write_file:
         write_file.write(file_0.read() + file_1.read() + file_2.read() + file_3.read() + file_4.read() + file_5.read() + file_6.read())
-file_0.close()
-file_1.close()
-file_2.close()
-file_3.close()
-file_4.close()
-file_5.close()
-file_6.close()
-write_file.close()
 #end MERGE
 
 
