@@ -31,18 +31,9 @@ with open(os.path.join(trained_model_path, f"encoder_0.onnx"), "rb") as file_0, 
         open(os.path.join(trained_model_path, f"encoder_1.onnx"), "rb") as file_1, \
         open(os.path.join(trained_model_path, f"encoder_2.onnx"), "rb") as file_2, \
         open(os.path.join(trained_model_path, f"encoder_3.onnx"), "rb") as file_3, \
-        open(os.path.join(trained_model_path, f"encoder_4.onnx"), "rb") as file_4, \
-        open(os.path.join(trained_model_path, f"encoder_5.onnx"), "rb") as file_5, \
-        open(os.path.join(trained_model_path, f"encoder_6.onnx"), "rb") as file_6, \
-        open(os.path.join(trained_model_path, f"encoder_7.onnx"), "rb") as file_7, \
-        open(os.path.join(trained_model_path, f"encoder_8.onnx"), "rb") as file_8, \
-        open(os.path.join(trained_model_path, f"encoder_9.onnx"), "rb") as file_9, \
-        open(os.path.join(trained_model_path, f"encoder_10.onnx"), "rb") as file_10, \
-        open(os.path.join(trained_model_path, f"encoder_11.onnx"), "rb") as file_11, \
-        open(os.path.join(trained_model_path, f"encoder_12.onnx"), "rb") as file_12, \
-        open(os.path.join(trained_model_path, f"encoder_13.onnx"), "rb") as file_13:
+        open(os.path.join(trained_model_path, f"encoder_4.onnx"), "rb") as file_4:
     with open(encoder_path, "wb") as write_file:
-        write_file.write(file_0.read() + file_1.read() + file_2.read() + file_3.read() + file_4.read() + file_5.read() + file_6.read() + file_7.read() + file_8.read() + file_9.read() + file_10.read() + file_11.read() + file_12.read() + file_13.read())
+        write_file.write(file_0.read() + file_1.read() + file_2.read() + file_3.read() + file_4.read())
 
 
 with open(os.path.join(trained_model_path, f"decoder_0.onnx"), "rb") as file_0, \
@@ -50,20 +41,9 @@ with open(os.path.join(trained_model_path, f"decoder_0.onnx"), "rb") as file_0, 
         open(os.path.join(trained_model_path, f"decoder_2.onnx"), "rb") as file_2, \
         open(os.path.join(trained_model_path, f"decoder_3.onnx"), "rb") as file_3, \
         open(os.path.join(trained_model_path, f"decoder_4.onnx"), "rb") as file_4, \
-        open(os.path.join(trained_model_path, f"decoder_5.onnx"), "rb") as file_5, \
-        open(os.path.join(trained_model_path, f"decoder_6.onnx"), "rb") as file_6, \
-        open(os.path.join(trained_model_path, f"decoder_7.onnx"), "rb") as file_7, \
-        open(os.path.join(trained_model_path, f"decoder_8.onnx"), "rb") as file_8, \
-        open(os.path.join(trained_model_path, f"decoder_9.onnx"), "rb") as file_9, \
-        open(os.path.join(trained_model_path, f"decoder_10.onnx"), "rb") as file_10, \
-        open(os.path.join(trained_model_path, f"decoder_11.onnx"), "rb") as file_11, \
-        open(os.path.join(trained_model_path, f"decoder_12.onnx"), "rb") as file_12, \
-        open(os.path.join(trained_model_path, f"decoder_13.onnx"), "rb") as file_13, \
-        open(os.path.join(trained_model_path, f"decoder_14.onnx"), "rb") as file_14, \
-        open(os.path.join(trained_model_path, f"decoder_15.onnx"), "rb") as file_15, \
-        open(os.path.join(trained_model_path, f"decoder_16.onnx"), "rb") as file_16:
+        open(os.path.join(trained_model_path, f"decoder_5.onnx"), "rb") as file_5:
     with open(decoder_path, "wb") as write_file:
-        write_file.write(file_0.read() + file_1.read() + file_2.read() + file_3.read() + file_4.read() + file_5.read() + file_6.read() + file_7.read() + file_8.read() + file_9.read() + file_10.read() + file_11.read() + file_12.read() + file_13.read() + file_14.read() + file_15.read() + file_16.read())
+        write_file.write(file_0.read() + file_1.read() + file_2.read() + file_3.read() + file_4.read() + file_5.read())
 
 
 with open(os.path.join(trained_model_path, f"init_decoder_0.onnx"), "rb") as file_0, \
@@ -72,21 +52,9 @@ with open(os.path.join(trained_model_path, f"init_decoder_0.onnx"), "rb") as fil
         open(os.path.join(trained_model_path, f"init_decoder_3.onnx"), "rb") as file_3, \
         open(os.path.join(trained_model_path, f"init_decoder_4.onnx"), "rb") as file_4, \
         open(os.path.join(trained_model_path, f"init_decoder_5.onnx"), "rb") as file_5, \
-        open(os.path.join(trained_model_path, f"init_decoder_6.onnx"), "rb") as file_6, \
-        open(os.path.join(trained_model_path, f"init_decoder_7.onnx"), "rb") as file_7, \
-        open(os.path.join(trained_model_path, f"init_decoder_8.onnx"), "rb") as file_8, \
-        open(os.path.join(trained_model_path, f"init_decoder_9.onnx"), "rb") as file_9, \
-        open(os.path.join(trained_model_path, f"init_decoder_10.onnx"), "rb") as file_10, \
-        open(os.path.join(trained_model_path, f"init_decoder_11.onnx"), "rb") as file_11, \
-        open(os.path.join(trained_model_path, f"init_decoder_12.onnx"), "rb") as file_12, \
-        open(os.path.join(trained_model_path, f"init_decoder_13.onnx"), "rb") as file_13, \
-        open(os.path.join(trained_model_path, f"init_decoder_14.onnx"), "rb") as file_14, \
-        open(os.path.join(trained_model_path, f"init_decoder_15.onnx"), "rb") as file_15, \
-        open(os.path.join(trained_model_path, f"init_decoder_16.onnx"), "rb") as file_16, \
-        open(os.path.join(trained_model_path, f"init_decoder_17.onnx"), "rb") as file_17, \
-        open(os.path.join(trained_model_path, f"init_decoder_18.onnx"), "rb") as file_18:
+        open(os.path.join(trained_model_path, f"init_decoder_6.onnx"), "rb") as file_6:
     with open(init_decoder_path, "wb") as write_file:
-        write_file.write(file_0.read() + file_1.read() + file_2.read() + file_3.read() + file_4.read() + file_5.read() + file_6.read() + file_7.read() + file_8.read() + file_9.read() + file_10.read() + file_11.read() + file_12.read() + file_13.read() + file_14.read() + file_15.read() + file_16.read() + file_17.read() + file_18.read())
+        write_file.write(file_0.read() + file_1.read() + file_2.read() + file_3.read() + file_4.read() + file_5.read() + file_6.read())
 #end MERGE
 
 
