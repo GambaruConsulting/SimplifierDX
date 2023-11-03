@@ -498,7 +498,8 @@ async def demo_post(
 
 @app.post("/path")
 async def demo_post(inp: Msg):
-    output = await PostProcess(inp.input, SimplifyGate(cleanup(inp.input)))
+    #output = await PostProcess(inp.input, SimplifyGate(cleanup(inp.input)))
+    output = simplify(cleanup(inp.input)) #Testing this, must change back
     logger.debug(inp.input)
     logger.debug(output)
     return {"output": output}
