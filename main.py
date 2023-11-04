@@ -106,14 +106,14 @@ def SimplifyGate(input_string):
     return output"""
 
 generator_args = {
-    "num_beams": 4,
+    #"num_beams": 4,
     "length_penalty": 1,
     "no_repeat_ngram_size": 5,
     "early_stopping": True,
     "min_length": 1,
     "max_length": 500
 }
-simplify = pipeline(model=OnnxT5(trained_model_path, model_sessions), tokenizer=tokenizer, task="text2text-generation")
+simplify = pipeline(model=OnnxT5(trained_model_path, model_sessions), tokenizer=tokenizer, task="text2text-generation", **generator_args)
 
 
 pests = ["\nadvertisement"]
