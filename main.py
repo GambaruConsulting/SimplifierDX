@@ -78,12 +78,12 @@ def SimplifyGate(input_string):
         batchArray = []
         parts = splitSentence(input_string)
         for part in parts:
-            batchArray.append(simplify(part))
+            batchArray.append(simplify(part)[0]['generated_text'])
         result = ""
         for item in batchArray:
             result = result + item + " "
     else:
-        result = simplify(input_string)
+        result = simplify(input_string)[0]['generated_text']
     return result
 
 
