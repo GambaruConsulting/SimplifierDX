@@ -107,7 +107,7 @@ def SimplifyGate(input_string):
 
 generator_args = {
     "num_beams": 4,
-    "do_sample": True;
+    "do_sample": True,
     "top_p": 0.8,
     "length_penalty": 1,
     "no_repeat_ngram_size": 5,
