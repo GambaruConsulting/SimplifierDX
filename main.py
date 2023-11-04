@@ -113,7 +113,7 @@ generator_args = {
     "min_length": 1,
     "max_length": 500
 }
-simplify = pipeline(model=OnnxT5(trained_model_path, model_sessions), tokenizer=tokenizer, task="text2text-generation")[0]
+simplify = pipeline(model=OnnxT5(trained_model_path, model_sessions), tokenizer=tokenizer, task="text2text-generation")
 
 
 pests = ["\nadvertisement"]
