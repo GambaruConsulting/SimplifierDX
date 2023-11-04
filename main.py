@@ -87,7 +87,7 @@ def SimplifyGate(input_string):
     return result
 
 
-def simplify(input_string, **generator_args):
+"""def simplify(input_string, **generator_args):
     model = OnnxT5(trained_model_path, model_sessions)
     generator_args = {
         "num_beams": 5,
@@ -103,9 +103,9 @@ def simplify(input_string, **generator_args):
     output = [item.split("<sep>") for item in output][0][0]
     output = output[:1].upper() + output[1:]
     del model
-    return output
+    return output"""
 
-"""generator_args = {
+generator_args = {
     "num_beams": 4,
     "length_penalty": 1,
     "no_repeat_ngram_size": 5,
@@ -113,7 +113,7 @@ def simplify(input_string, **generator_args):
     "min_length": 1,
     "max_length": 500
 }
-simplify = pipeline(model=model, tokenizer=tokenizer, task="text2text-generation", **generator_args)[0]"""
+simplify = pipeline(model=OnnxT5(trained_model_path, model_sessions), tokenizer=tokenizer, task="text2text-generation")[0]
 
 
 pests = ["\nadvertisement"]
@@ -498,8 +498,7 @@ async def demo_post(
 
 @app.post("/path")
 async def demo_post(inp: Msg):
-    #output = await PostProcess(inp.input, SimplifyGate(cleanup(inp.input)))
-    output = simplify(cleanup(inp.input)) #Testing this, must change back
+    output = await PostProcess(inp.input, SimplifyGate(cleanup(inp.input)))
     logger.debug(inp.input)
     logger.debug(output)
     return {"output": output}
